@@ -10,23 +10,23 @@ const curtoBtn = document.querySelector(".app__card-button--curto")
 const longoBtn = document.querySelector(".app__card-button--longo")
 const startPauseBtn = document.querySelector("#start-pause")
 
-
 const temporizadorFoco = 1500;
 const temporizadorCurto = 300;
 const temporizadorLongo = 900;
 
-
+function alteraContexto(contexto) {
+  html.setAttribute('data-contexto', contexto)
+  figure.setAttribute("src", `/imagens/${contexto}.png`)
+}
 
 focoBtn.addEventListener("click", () => {
-  html.setAttribute("data-contexto", "foco")
+  alteraContexto("foco")
 })
 
 curtoBtn.addEventListener("click", () => {
-  html.setAttribute("data-contexto", "descanso-curto")
+  alteraContexto("descanso-curto")
 })
 
 longoBtn.addEventListener("click", () => {
-  html.setAttribute("data-contexto", "descanso-longo")
+  alteraContexto("descanso-longo")
 })
-
-
