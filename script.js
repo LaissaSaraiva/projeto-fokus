@@ -2,6 +2,9 @@ const html = document.querySelector("html")
 const timer = document.querySelector("#timer")
 const titulo = document.querySelector('.app__title')
 const figure = document.querySelector(".app__image")
+const musicaFocoInput = document.querySelector("#alternar-musica")
+const musica = new Audio("./sons/luna-rise-part-one.mp3")
+musica.loop = true
 
 // Botões
 
@@ -58,4 +61,12 @@ curtoBtn.addEventListener("click", () => {
 longoBtn.addEventListener("click", () => {
   alteraContexto("descanso-longo")
   longoBtn.classList.add("active")
+})
+
+musicaFocoInput.addEventListener("change", () => {
+  if(musica.paused) {
+    musica.play()
+  } else {
+    musica.pause()
+  }
 })
